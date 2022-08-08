@@ -2,10 +2,10 @@ package org.ron.m3.intro;
 
 public class Misc extends Finals {
 
-//    @Override
-//    public void m1(int i) {
-//        System.out.println("Misc.m1()");
-//    }
+    @Override
+    public void m1() {
+        System.out.println("Misc.m1()");
+    }
 
 //    @Override
     public void m2() {
