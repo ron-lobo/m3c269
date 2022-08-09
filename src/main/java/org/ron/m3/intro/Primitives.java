@@ -3,11 +3,12 @@ package org.ron.m3.intro;
 public class Primitives {
 
     public static void main(String[] args) {
-        basicPrimitives();
-        primitiveWrappers();
+        Primitives primitives = new Primitives();
+        primitives.basicPrimitives();
+        primitives.primitiveWrappers();
     }
 
-    private static void primitiveWrappers() {
+    private void primitiveWrappers() {
 
         Byte by;
         Short s;
@@ -22,7 +23,7 @@ public class Primitives {
         System.out.println("d=" + d);
     }
 
-    public static void basicPrimitives() {
+    private void basicPrimitives() {
 
         byte by;                    // 1 byte   (8 bits)     -128 .. 127
         short s;                    // 2 bytes (16 bits)     -32768 .. 32767
