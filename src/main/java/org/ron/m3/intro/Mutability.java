@@ -5,36 +5,38 @@ public class Mutability {
     public static final double PI = 3.14;
 
     public static void main(String[] args) {
-        m1(0);
+        m1();
     }
 
-    public static void m1(int i) {
+    public static void m1() {
         System.out.println("Finals.m1()");
 
-        int SUB_ACCOUNTS = 5;
-        Integer mainAccounts = 7;
+        int i = 5;
+        Integer i1 = 7;
         String str = "Hi";
         StringBuilder sb = new StringBuilder("Hello");
 
-        System.out.println("    BEFORE calling m2()");
-        System.out.println("SUB_ACCOUNTS = " + SUB_ACCOUNTS);
-        System.out.println("mainAccounts = " + mainAccounts);
-        System.out.println("sb = " + sb);
-        System.out.println("str = " + str);
+        showVariables("Before calling m2()", i, i1, str, sb);
+        m2(i, i1, str, sb);
+        showVariables("After calling m2()", i, i1, str, sb);
 
-        m2(SUB_ACCOUNTS, mainAccounts, str, sb);
-
-        System.out.println("    AFTER");
-        System.out.println("SUB_ACCOUNTS = " + SUB_ACCOUNTS);
-        System.out.println("mainAccounts = " + mainAccounts);
-        System.out.println("sb = " + sb);
-        System.out.println("str = " + str);
-
-//        str += " world";
+        str += " cruel";
         str = str + " world";
-        mainAccounts++;
-        mainAccounts += 5;
-        System.out.println("str = " + str +  ", mainAccounts = " + mainAccounts);
+        i++;
+        i1++;
+        i1 += 5;
+        showVariables("After reassignments", i, i1, str, sb);
+    }
+
+    private static void showVariables(String text, int i, Integer i1, String str, StringBuilder sb) {
+//        System.out.println();
+//        System.out.println(text);
+//        System.out.println("i = " + i);
+//        System.out.println("i1 = " + i1);
+//        System.out.println("sb = " + sb);
+//        System.out.println("str = " + str);
+
+        System.out.printf("%5$s: i=%1$d, i1=%2$d, sb=%4$s, str=%3$s", i, i1, str, sb, text);
     }
 
     public static void m2(int i, Integer j, String str, StringBuilder sb) {
