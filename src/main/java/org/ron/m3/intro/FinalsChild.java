@@ -1,6 +1,6 @@
 package org.ron.m3.intro;
 
-public class Misc extends Finals {
+public class FinalsChild extends Finals {
 
     @Override
     public void m1() {
