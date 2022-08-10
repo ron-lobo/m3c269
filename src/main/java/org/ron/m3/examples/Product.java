@@ -15,7 +15,7 @@ public class Product {
     }
 
     public void setId(int id_) {
-        // call other methods to ensure no clashes
+        // TODO: ensure no clashes somehow ...
         id = id_ % 2 == 0 ? id_ : id_ + 1;
     }
 
