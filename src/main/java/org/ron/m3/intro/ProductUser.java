@@ -34,21 +34,8 @@ public class ProductUser {
     }
 
     private void setUpProducts() {
-        product1 = new Product();
-        product1.setId(1234);
-        product1.setName("widget");
-        product1.setRRP(9.99);
-
-        product2 = new Product();
-        product2.setId(1235);
-        product2.setName("thingy");
-        this.product2.setRRP(19.99);
-
-        product3 = new Product();
-        product3.setId(1236);
-        product3.setName("stuff");
-        this.product3.setRRP(29.99);
+        product1 = new Product(1234, "widget", 9.99);
+        product2 = new Product(1235, "thingy", 19.99);
+        product3 = new Product(1236, "stuff", 29.99);
     }
-
-
 }
