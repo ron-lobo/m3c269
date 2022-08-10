@@ -1,18 +1,28 @@
 package org.ron.m3.examples;
 
-//import java.time.LocalDate;
+import java.time.LocalDate;
 
 public class Product {
 
     private final int id;
     private final String name;
-//    private LocalDate dateOfManufacture;
+    private LocalDate dateOfManufacture;
     private double rrp;
 
     public Product(int id, String name, double rrp) {
+        this(id, name, rrp, LocalDate.now());
+    }
+
+    public Product(int id, String name, double rrp, LocalDate dateOfManufacture) {
         this.id = setId(id);
         this.name = name;
         setRRP(rrp);
+        this.dateOfManufacture = dateOfManufacture;
+    }
+
+    public void showProduct(String text) {
+        System.out.printf("%s: id=%d, name=%s, rrp=£%.2f, dom=%s %n",
+                text, getId(), getName(), getRRP(), getDateOfManufacture());
     }
 
     public int getId() {
@@ -34,5 +44,9 @@ public class Product {
 
     public void setRRP(double rrp) {
         this.rrp = rrp;
+    }
+
+    public LocalDate getDateOfManufacture() {
+        return dateOfManufacture;
     }
 }

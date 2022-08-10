@@ -2,6 +2,8 @@ package org.ron.m3.intro;
 
 import org.ron.m3.examples.Product;
 
+import java.time.LocalDate;
+
 public class ProductUser {
 
     private Product product1;
@@ -18,13 +20,9 @@ public class ProductUser {
 
     private void showProducts() {
         System.out.println();
-        showProduct("Product1", product1);
-        showProduct("Product2", product2);
-        showProduct("Product3", product3);
-    }
-
-    private void showProduct(String text, Product product) {
-        System.out.printf("%s: id=%d, name=%s, rrp=£%.2f %n", text, product.getId(), product.getName(), product.getRRP());
+        product1.showProduct("Product1");
+        product2.showProduct("Product2");
+        product3.showProduct("Product3");
     }
 
     private  void markUpProducts(double increase) {
@@ -34,7 +32,7 @@ public class ProductUser {
     }
 
     private void setUpProducts() {
-        product1 = new Product(1234, "widget", 9.99);
+        product1 = new Product(1234, "widget", 9.99, LocalDate.of(2019, 2, 2));
         product2 = new Product(1235, "thingy", 19.99);
         product3 = new Product(1236, "stuff", 29.99);
     }
