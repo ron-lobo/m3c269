@@ -1,5 +1,7 @@
 package org.ron.m3.intro;
 
+import org.ron.m3.examples.Product;
+
 public class Statics {
 
     private String name;
@@ -45,5 +47,16 @@ public class Statics {
         // ...
         // ...
         return "London";
+    }
+
+    public static void testEquality(String text, Object obj1, Object obj2) {
+        System.out.println("comparing: " +  text);
+        System.out.println("equals() method: " + (obj1.equals(obj2) ? "same" : "different"));
+
+        if (obj1 == obj2) {
+            System.out.println("== operator:     same");
+        } else {
+            System.out.println("== operator:     different");
+        }
     }
 }

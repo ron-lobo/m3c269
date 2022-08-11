@@ -1,6 +1,7 @@
 package org.ron.m3.intro;
 
 import org.ron.m3.examples.Product;
+import org.ron.m3.examples.Vehicle;
 
 import java.time.LocalDate;
 
@@ -10,6 +11,10 @@ public class ProductUser {
     private Product product2;
     private Product product3;
     private Product product4;
+
+    private Vehicle vehicle1;
+    private Vehicle vehicle2;
+    private Vehicle vehicle3;
 
     public static void main(String[] args) {
         ProductUser productUser = new ProductUser();
@@ -22,19 +27,9 @@ public class ProductUser {
 
     private void testProducts() {
         System.out.println("\ntestProducts()");
-        testEquality("1 & 2", product1, product2);
-        testEquality("3 & 4", product3, product4);
-    }
-
-    private void testEquality(String text, Product p1, Product p2) {
-        System.out.println("comparing: " +  text);
-        System.out.println("equals() method: " + (p1.equals(p2) ? "same" : "different"));
-
-        if (p1 == p2) {
-            System.out.println("== operator:     same");
-        } else {
-            System.out.println("== operator:     different");
-        }
+        // testEquality("1 & 2", product1, product2);
+        Statics.testEquality("product3 & product4", product3, product4);
+        Statics.testEquality("vehicle2 & vehicle3", vehicle2, vehicle3);
     }
 
     private void showProducts() {
@@ -57,5 +52,9 @@ public class ProductUser {
         product2 = new Product(1235, "thingy", 19.99);
         product3 = new Product(1236, "stuff", 29.99);
         product4 = new Product(1236, "stuff", 29.99);
+
+        vehicle1 = new Vehicle("Ford", "fiesta", 4, "blue");
+        vehicle2 = new Vehicle("VW", "Beetle", 4, "orange");
+        vehicle3 = new Vehicle("VW", "Beetle", 4, "orange");
     }
 }
