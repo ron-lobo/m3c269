@@ -51,7 +51,13 @@ public class Product {
     }
 
     @Override
-    public boolean equals(Object o) {
-        return true;
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Product p)) {
+            return false;
+        }
+        return id == p.id;
     }
 }
