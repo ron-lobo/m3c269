@@ -1,6 +1,6 @@
 package org.ron.m3.intro;
 
-public class Statics {
+public class StaticsIntro {
 
     private String name;
     private int numBuses;
@@ -16,8 +16,8 @@ public class Statics {
     }
 
     public static void main(String[] args) {
-        Statics company1 = new Statics("Company1", 10, 2);
-        Statics company2 = new Statics("Company2", 20, 7);
+        StaticsIntro company1 = new StaticsIntro("Company1", 10, 2);
+        StaticsIntro company2 = new StaticsIntro("Company2", 20, 7);
 
         company1.printout();
         company2.printout();
@@ -31,7 +31,7 @@ public class Statics {
         company2.printout();
     }
 
-    public Statics(String name, int buses, int planes) {
+    public StaticsIntro(String name, int buses, int planes) {
         this.name = name;
         this.numBuses = buses;
         this.numPlanes = planes;

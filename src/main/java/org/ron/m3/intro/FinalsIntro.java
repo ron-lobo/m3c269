@@ -1,6 +1,6 @@
 package org.ron.m3.intro;
 
-public /* final */ class Finals {
+public /* final */ class FinalsIntro {
 
     public static final double PI = 3.14;
     private int i = 1;

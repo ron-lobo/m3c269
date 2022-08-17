@@ -27,14 +27,14 @@ public class ProductUser {
 
     private void testProducts() {
         System.out.println("\ntestProducts()");
-//        Statics.testEquality("product3 & product4", product3, product4);
-//        Statics.testEquality("product1 & product2", product1, product2);
-//        Statics.testEquality("product1 & vehicle3", product1, vehicle3);
-//        Statics.testEquality("product1 & null", product1, null);
+        StaticsIntro.testEquality("product3 & product4", product3, product4);
+        StaticsIntro.testEquality("product1 & product2", product1, product2);
+        StaticsIntro.testEquality("product1 & vehicle3", product1, vehicle3);
+        StaticsIntro.testEquality("product1 & null", product1, null);
 
-        Statics.testEquality("vehicle1 & vehicle2", vehicle1, vehicle2);
-        Statics.testEquality("vehicle3 & vehicle2", vehicle3, vehicle2);
-        Statics.testEquality("vehicle3 & vehicle3", vehicle3, vehicle3);
+        StaticsIntro.testEquality("vehicle1 & vehicle2", vehicle1, vehicle2);
+        StaticsIntro.testEquality("vehicle3 & vehicle2", vehicle3, vehicle2);
+        StaticsIntro.testEquality("vehicle3 & vehicle3", vehicle3, vehicle3);
     }
 
     private void showProducts() {
