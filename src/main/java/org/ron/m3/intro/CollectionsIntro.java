@@ -10,7 +10,7 @@ public class CollectionsIntro {
 
     public static void main(String[] args) {
         CollectionsIntro ci = new CollectionsIntro();
-//        ci.arrays();
+        ci.arrays();
         ci.lists();
 
         // Stack
@@ -22,14 +22,13 @@ public class CollectionsIntro {
         // ArrayList<String> list1 = new ArrayList<>(); // avoid!
 
         List<String> list1 = new ArrayList<>();
-//        list1.add(1);
-        list1.add("hi");
-        list1.add("C269");
+//        list1.add("hi");
+//        list1.add("C269");
         useList("list1", list1);
 
         List<String> list2 = new TreeList<>();
         list2.add("hello");
-        list2.add("cruel");
+        list2.add("wonderful");
         list2.add("world");
         useList("list2", list2);
 
@@ -40,21 +39,27 @@ public class CollectionsIntro {
         useList("linkedList", linkedList);
     }
 
-    private void useList(String text, List<String> stringList) {
+    private void useList(String text, List<String> list) {
+        String sizeInfo = "Initial size = " + list.size();
         System.out.printf("simple for loop - %s: ", text);
-        for (int i = 0; i < stringList.size(); i++) {
-            System.out.printf("%d:%s, ", i, stringList.get(i));
+        for (int i = 0; i < list.size(); i++) {
+            System.out.printf("%d:%s, ", i, list.get(i));
         }
         System.out.println();
 
-        stringList.add("End Item");
-        stringList.add(0, "start item");
+        if (list.size() > 1) {
+            list.remove(1);
+        }
+        list.add("End Item");
+        list.add(0, "start item");
 
         System.out.printf("Java5 for loop - %s: ", text);
-        for (String s : stringList) {
+        for (String s : list) {
             System.out.printf("%s, ", s);
         }
         System.out.println();
+        System.out.println(sizeInfo);
+        System.out.println("final size = " + list.size());
         System.out.println();
     }
 
