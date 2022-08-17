@@ -2,7 +2,7 @@ package org.ron.m3.examples;
 
 import java.util.Objects;
 
-public class Vehicle {
+public class Vehicle implements Automobile {
 
     private final String make;
     private final String model;
@@ -63,5 +63,14 @@ public class Vehicle {
                 Objects.equals(make, v.make) &&
                 Objects.equals(model, v.model) &&
                 Objects.equals(colour, v.colour);
+    }
+
+    @Override
+    public void go(int speed) {
+        System.out.println("setting speed to " + speed);
+    }
+
+    public void stop() {
+        System.out.println("stopping");
     }
 }

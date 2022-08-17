@@ -1,6 +1,10 @@
 package org.ron.m3.intro;
 
+import org.apache.commons.collections4.list.TreeList;
+
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class CollectionsIntro {
 
@@ -8,31 +12,51 @@ public class CollectionsIntro {
         CollectionsIntro ci = new CollectionsIntro();
 //        ci.arrays();
         ci.lists();
+
+        // Stack
     }
 
     private void lists() {
         System.out.println("\nLists\n-----");
 
-        ArrayList<String> list = new ArrayList<String>();
+        // ArrayList<String> list1 = new ArrayList<>(); // avoid!
 
-//        list.add(1);
-        list.add("hi");
-        list.add("C269");
+        List<String> list1 = new ArrayList<>();
+//        list1.add(1);
+        list1.add("hi");
+        list1.add("C269");
+        useList("list1", list1);
 
-        System.out.print("simple for loop - list: ");
-        for (int i = 0; i < list.size(); i++) {
-            System.out.printf("%d:%s, ", i, list.get(i));
+        List<String> list2 = new TreeList<>();
+        list2.add("hello");
+        list2.add("cruel");
+        list2.add("world");
+        useList("list2", list2);
+
+        List<String> linkedList = new LinkedList<>();
+        linkedList.add("goodbye");
+        linkedList.add("cruel");
+        linkedList.add("world");
+        useList("linkedList", linkedList);
+    }
+
+    private void useList(String text, List<String> stringList) {
+        System.out.printf("simple for loop - %s: ", text);
+        for (int i = 0; i < stringList.size(); i++) {
+            System.out.printf("%d:%s, ", i, stringList.get(i));
         }
         System.out.println();
 
-        System.out.print("Java5 for loop - list: ");
-        for (String s : list) {
+        stringList.add("End Item");
+        stringList.add(0, "start item");
+
+        System.out.printf("Java5 for loop - %s: ", text);
+        for (String s : stringList) {
             System.out.printf("%s, ", s);
         }
         System.out.println();
-
+        System.out.println();
     }
-    // Stack
 
     private void arrays() {
         System.out.println("\nArrays\n------");
