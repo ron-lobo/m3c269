@@ -13,7 +13,6 @@ public class CollectionsIntro {
         ci.arrays();
         ci.lists();
 
-        // Stack
     }
 
     private void lists() {
@@ -41,6 +40,7 @@ public class CollectionsIntro {
 
     private void useList(String text, List<String> list) {
         String sizeInfo = "Initial size = " + list.size();
+        System.out.println("'world' in list? " + list.contains("hello"));
         System.out.printf("simple for loop - %s: ", text);
         for (int i = 0; i < list.size(); i++) {
             System.out.printf("%d:%s, ", i, list.get(i));
