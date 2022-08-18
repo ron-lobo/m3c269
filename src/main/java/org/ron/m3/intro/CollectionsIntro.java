@@ -2,17 +2,58 @@ package org.ron.m3.intro;
 
 import org.apache.commons.collections4.list.TreeList;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class CollectionsIntro {
+
+    private Random random = new Random();
 
     public static void main(String[] args) {
         CollectionsIntro ci = new CollectionsIntro();
         ci.arrays();
-        ci.lists();
+        ci.lists();             // ordered, may contain duplicates
+        ci.sets();              // unordered, contain no duplicates
+    }
 
+    private void sets() {
+        System.out.println("\nSets\n----");
+
+        Set<String> stringSet1 = new HashSet<>();
+        Set<String> stringSet2 = new TreeSet<>();
+
+        populateSet(stringSet1);
+        populateSet(stringSet2);
+        populateSet(stringSet2);
+        populateSet(stringSet2);
+
+        showSet("stringSet1", stringSet1);
+        showSet("stringSet2", stringSet2);
+    }
+
+    private void showSet(String text, Set<String> strings) {
+        System.out.println("Set " + text + ": " + strings.size() + " items");
+        for (String s : strings) {
+            System.out.print(s + ", ");
+        }
+        System.out.println();
+        for (Iterator<String> iter = strings.iterator(); iter.hasNext(); ) {
+            String s = iter.next();
+            System.out.print(s + ", ");
+            if (random.nextDouble() < 0.33) {
+                iter.remove();                  // safe way to remove elements while looping/iterating
+            }
+        }
+        System.out.println("   final size: " + strings.size() + " items");
+        System.out.println();
+    }
+
+    private void populateSet(Set<String> strings) {
+        strings.add("hello");
+        strings.add("gday");
+        strings.add("hi");
+        strings.add("goodbye");
+        strings.add("farewell");
+        strings.add("bye");
     }
 
     private void lists() {
@@ -56,6 +97,9 @@ public class CollectionsIntro {
         System.out.printf("Java5 for loop - %s: ", text);
         for (String s : list) {
             System.out.printf("%s, ", s);
+//            if (list.size() > 0) {
+//                list.remove(0);       // beware!
+//            }
         }
         System.out.println();
         System.out.println(sizeInfo);
