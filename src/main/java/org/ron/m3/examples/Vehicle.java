@@ -66,6 +66,11 @@ public class Vehicle implements Automobile {
     }
 
     @Override
+    public int hashCode() {
+        return Objects.hash(numWheels, regPlate, make, model, colour);
+    }
+
+    @Override
     public void go(int speed) {
         System.out.println("setting speed to " + speed);
     }

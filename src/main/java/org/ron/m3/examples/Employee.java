@@ -37,14 +37,24 @@ public class Employee {
 
     @Override
     public int hashCode() {
+        return Objects.hash(name, address, phoneNum, dept, salary);
+    }
+
+    public int hashCode_v3() {
+        final int PRIME = 91;
+        int val = name.hashCode() * PRIME;
+        val *= address.hashCode() * PRIME;
+        val *= phoneNum.hashCode() * PRIME;
+        val *= dept.hashCode() * PRIME;
+        val *= (int) salary * PRIME;
+        return val;
+    }
+
+    public int hashCode_v2() {
         return name.hashCode() + address.hashCode() + phoneNum.hashCode() + dept.hashCode() + (int) salary;
     }
+
+    public int hashCode_v1() {
+        return 0;
+    }
 }
-/**
- * LL0 -> [e1, v1],
- * LL1 -> [Neville, Corvette GS]
- * LL2 -> [Hermione, Mini],
- * LL3 -> [Draco, Aperta],
- * ...
- * LL15 -> [Luna, DS-etense],
- */

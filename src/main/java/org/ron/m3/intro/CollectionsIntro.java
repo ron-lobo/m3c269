@@ -37,6 +37,10 @@ public class CollectionsIntro {
         hashMapPerformance(1000, 750);
         hashMapPerformance(1000_000, 750_000);
 
+        hashMapWithMyClasses();
+    }
+
+    private void hashMapWithMyClasses() {
         System.out.println();
         Map<Employee, Vehicle> evMap = createEmpVehicleMap();
         Employee hermi = new Employee("Hermione", "123 The Road", "456", 1000, "spells");
@@ -52,8 +56,17 @@ public class CollectionsIntro {
         System.out.println("Hermioni's vehicle = " + vehicle);
         System.out.println("e1's vehicle = " + evMap.get(e1));
         System.out.println("Harry's vehicle = " + evMap.get(harry));
-
     }
+
+    /**
+     * Hash buckets inside a HashMap
+     * LL0 -> [e1, v1],
+     * LL1 -> [Neville, Corvette GS]
+     * LL2 -> [Hermione, Mini],
+     * LL3 -> [Draco, Aperta],
+     * ...
+     * LL15 -> [Luna, DS-etense],
+     */
 
     private Map<Employee, Vehicle> createEmpVehicleMap() {
         Map<Employee, Vehicle> employeeVehicleMap = new HashMap<>();
