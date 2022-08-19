@@ -34,4 +34,17 @@ public class Employee {
                 Objects.equals(dept, e.dept) &&
                 salary == e.salary;
     }
+
+    @Override
+    public int hashCode() {
+        return name.hashCode() + address.hashCode() + phoneNum.hashCode() + dept.hashCode() + (int) salary;
+    }
 }
+/**
+ * LL0 -> [e1, v1],
+ * LL1 -> [Neville, Corvette GS]
+ * LL2 -> [Hermione, Mini],
+ * LL3 -> [Draco, Aperta],
+ * ...
+ * LL15 -> [Luna, DS-etense],
+ */

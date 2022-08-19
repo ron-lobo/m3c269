@@ -1,12 +1,15 @@
 package org.ron.m3.intro;
 
 import org.apache.commons.collections4.list.TreeList;
+import org.ron.m3.examples.Employee;
+import org.ron.m3.examples.Vehicle;
 
 import java.util.*;
 
 public class CollectionsIntro {
 
     private Random random = new Random();
+    private Employee e1 = new Employee("Harry", "13 PD", "123", 1000, "potions");
 
     public static void main(String[] args) {
         CollectionsIntro ci = new CollectionsIntro();
@@ -33,6 +36,31 @@ public class CollectionsIntro {
         System.out.println();
         hashMapPerformance(1000, 750);
         hashMapPerformance(1000_000, 750_000);
+
+        System.out.println();
+        Map<Employee, Vehicle> evMap = createEmpVehicleMap();
+        Employee hermi = new Employee("Hermione", "123 The Road", "456", 1000, "spells");
+        Employee harry = new Employee("Harry", "13 PD", "123", 1000, "potions");
+
+        System.out.println("Hermi's hashCode=" + hermi.hashCode());
+        System.out.println("Harry's hashCode=" + harry.hashCode());
+        System.out.println("e1's hashCode   =" + e1.hashCode());
+        System.out.println("harry equals() e1 ? " + e1.equals(harry));
+        System.out.println("harry    ==    e1 ? " + (e1 == harry));
+
+        Vehicle vehicle = evMap.get(hermi);
+        System.out.println("Hermioni's vehicle = " + vehicle);
+        System.out.println("e1's vehicle = " + evMap.get(e1));
+        System.out.println("Harry's vehicle = " + evMap.get(harry));
+
+    }
+
+    private Map<Employee, Vehicle> createEmpVehicleMap() {
+        Map<Employee, Vehicle> employeeVehicleMap = new HashMap<>();
+        Vehicle v1 = new Vehicle("Fiat", "500", 4, "white");
+        employeeVehicleMap.put(e1, v1);
+        employeeVehicleMap.put(new Employee("Hermione", "123 The Road", "456", 1000, "spells"), new Vehicle("Maxi", "Mini", 4, "pink"));
+        return employeeVehicleMap;
     }
 
     private void useMap(Map<String, Integer> student2GradeMap) {
