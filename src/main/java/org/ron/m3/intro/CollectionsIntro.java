@@ -13,6 +13,61 @@ public class CollectionsIntro {
         ci.arrays();
         ci.lists();             // ordered, may contain duplicates
         ci.sets();              // unordered, contain no duplicates
+        ci.maps();
+    }
+
+    private void maps() {
+        System.out.println("\nMaps\n----");
+
+        Map<String, Integer> student2GradeMap = new HashMap<>();
+        populateMap(student2GradeMap);
+        useMap(student2GradeMap);
+
+//        int harrysGrade = student2GradeMap.get("Harry");
+//        System.out.println("HarrysGrade = " + harrysGrade);
+
+        for (Map.Entry<String, Integer> entry : student2GradeMap.entrySet()) {
+            System.out.printf("student=%s, grade=%d %n", entry.getKey(), entry.getValue());
+        }
+
+        System.out.println();
+        hashMapPerformance(1000, 750);
+        hashMapPerformance(1000_000, 750_000);
+    }
+
+    private void useMap(Map<String, Integer> student2GradeMap) {
+        for (String student : student2GradeMap.keySet()) {
+            int grade = student2GradeMap.get(student);
+            if (grade < 50) {
+                student2GradeMap.put(student, grade * 2);
+            }
+        }
+        student2GradeMap.put("Ron", 110);
+    }
+
+    private void populateMap(Map<String, Integer> student2GradeMap) {
+        student2GradeMap.put("Harry", 99);
+        student2GradeMap.put("Hermione", 100);
+        student2GradeMap.put("Ron", 10);
+    }
+
+    private void hashMapPerformance(int mapSize, int pos) {
+        System.out.println("hash map text: mapSize = " + mapSize);
+        Map<Integer, Integer> map = new HashMap<>();
+
+//        System.currentTimeMillis();
+        long s0 = System.nanoTime();
+        for (int i = 0; i < mapSize; i++) {
+            map.put(i, random.nextInt(mapSize));
+        }
+        long s1 = System.nanoTime();
+        Integer value = map.get(pos);
+        long s2 = System.nanoTime();
+        System.out.println("Value at " + pos + " = " + value);
+
+        System.out.println("Map population time: " + (s1 - s0) / 1000 + " micros");
+        System.out.println("return item time   : " + (s2 - s1) / 1000 + " micros");
+        System.out.println();
     }
 
     private void sets() {
