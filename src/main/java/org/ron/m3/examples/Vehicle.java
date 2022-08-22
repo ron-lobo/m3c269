@@ -71,6 +71,17 @@ public class Vehicle implements Automobile {
     }
 
     @Override
+    public String toString() {
+        return "Vehicle {" +
+                "make=" + make +
+                ", model=" + model +
+                ", numWheels=" + numWheels +
+                ", colour=" + colour +
+                ", regPlate=" + regPlate +
+                '}';
+    }
+
+    @Override
     public void go(int speed) {
         System.out.println("setting speed to " + speed);
     }

@@ -56,6 +56,18 @@ public class CollectionsIntro {
         System.out.println("Hermioni's vehicle = " + vehicle);
         System.out.println("e1's vehicle = " + evMap.get(e1));
         System.out.println("Harry's vehicle = " + evMap.get(harry));
+        System.out.println("Luna's vehicle = " + evMap.get("luna"));
+        System.out.println("Luna's vehicle = " + evMap.get(new Employee("Luna", null, null, 0, null)));
+
+        System.out.println("evMap contents:");
+        for (Employee e : evMap.keySet()) {
+            System.out.println("Employee = " + e + ", Vehicle = " + evMap.get(e));
+        }
+
+        System.out.println("evMap contents:");
+        for (Map.Entry<Employee, Vehicle> entry : evMap.entrySet()) {
+            System.out.println("Employee = " + entry.getKey() + ", Vehicle = " + entry.getValue());
+        }
     }
 
     /**

@@ -20,9 +20,14 @@ public class Product {
         this.dateOfManufacture = dateOfManufacture;
     }
 
-    public void showProduct(String text) {
-        System.out.printf("%s: id=%d, name=%s, rrp=£%.2f, dom=%s %n",
-                text, getId(), getName(), getRRP(), getDateOfManufacture());
+    @Override
+    public String toString() {
+        return "Product {" +
+                "id=" + id +
+                ", name=" + name +
+                ", dateOfManufacture=" + dateOfManufacture +
+                ", rrp=" + rrp +
+                "}";
     }
 
     public int getId() {

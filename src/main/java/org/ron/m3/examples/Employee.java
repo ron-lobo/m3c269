@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Employee {
 
-    private String name;
+    private final String name;
     private String address;
     private String phoneNum;
     private double salary;
@@ -18,7 +18,52 @@ public class Employee {
         this.dept = dept;
     }
 
-    // getters & setters
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhoneNum() {
+        return phoneNum;
+    }
+
+    public void setPhoneNum(String phoneNum) {
+        this.phoneNum = phoneNum;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public String getDept() {
+        return dept;
+    }
+
+    public void setDept(String dept) {
+        this.dept = dept;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", phoneNum='" + phoneNum + '\'' +
+                ", salary=" + salary +
+                ", dept='" + dept + '\'' +
+                '}';
+    }
 
     @Override
     public boolean equals(Object obj) {

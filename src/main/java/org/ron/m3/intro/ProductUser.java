@@ -16,15 +16,15 @@ public class ProductUser {
         ProductUser productUser = new ProductUser();
         productUser.readFromDB();
         productUser.showProducts();
-        productUser.markUpProducts(1.3);
-        productUser.showProducts();
-        productUser.testProducts();
-
-        System.out.println();
-        for (int i = 0; i < 4; i++) {
-            Vehicle v = productUser.getUserInput(i);
-            productUser.respondToUser(v);
-        }
+//        productUser.markUpProducts(1.3);
+//        productUser.showProducts();
+//        productUser.testProducts();
+//
+//        System.out.println();
+//        for (int i = 0; i < 4; i++) {
+//            Vehicle v = productUser.getUserInput(i);
+//            productUser.respondToUser(v);
+//        }
     }
 
     private Vehicle getUserInput(int i) {
@@ -60,7 +60,7 @@ public class ProductUser {
     private void showProducts() {
         System.out.println();
         for (int i = 0; i < products.size(); i++) {
-            products.get(i).showProduct("Product" + i);
+            System.out.println("Product" + i + ": " + products.get(i));
         }
     }
 
