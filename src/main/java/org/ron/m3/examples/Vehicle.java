@@ -2,7 +2,7 @@ package org.ron.m3.examples;
 
 import java.util.Objects;
 
-public class Vehicle implements Automobile {
+public class Vehicle implements Automobile, Comparable<Vehicle> {
 
     private final String make;
     private final String model;
@@ -88,5 +88,17 @@ public class Vehicle implements Automobile {
 
     public void stop() {
         System.out.println("stopping");
+    }
+
+    @Override
+    public int compareTo(Vehicle v) {
+        int result = make.compareTo(v.make);
+        if (result == 0) {
+            result = model.compareTo(v.model);
+            if (result == 0) {
+                result = Integer.compare(numWheels, v.numWheels);
+            }
+        }
+        return result;
     }
 }

@@ -27,6 +27,14 @@ public class ProductUser {
 //        }
     }
 
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public List<Vehicle> getVehicles() {
+        return vehicles;
+    }
+
     private Vehicle getUserInput(int i) {
         // Scanner ...
 
@@ -70,7 +78,7 @@ public class ProductUser {
         }
     }
 
-    private void readFromDB() {
+    public void readFromDB() {
 
         // pretend objs are read in from DB
 
@@ -81,7 +89,9 @@ public class ProductUser {
         products.add(new Product(1236, "stuff", 29.99));
 
         vehicles.add(new Vehicle("Tesla", "model 3", 4, "white"));
-        vehicles.add(new Vehicle("Ford", "fiesta", 4, "blue"));
+        vehicles.add(new Vehicle("Ford", "Fiesta", 4, "blue"));
+        vehicles.add(new Vehicle("Ford", "GT", 4, "red"));
+        vehicles.add(new Vehicle("Ford", "Escort", 4, "red"));
         vehicles.add(new Vehicle("VW", "Beetle", 4, "orange"));
         vehicles.add(new Vehicle("VW", "Beetle", 4, "orange"));
     }
