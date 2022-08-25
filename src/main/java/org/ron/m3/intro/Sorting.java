@@ -1,6 +1,7 @@
 package org.ron.m3.intro;
 
 import org.ron.m3.examples.Vehicle;
+import org.ron.m3.examples.VehicleSorter;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,20 +21,27 @@ public class Sorting {
         List<String> strings1 = createList("Harry Potter", "Hermione Granger", "Luna Lovegood", "Draco Malfoy");
         List<String> strings2 = createStringList("Jacob", "Edward", "Bella");
 
-        showList("strings1 before", strings1);
+        Collections.shuffle(strings1);
+        showList("strings1 before sort:   ", strings1);
         Collections.sort(strings1);
+        showList("strings1 after sort:    ", strings1);
         Collections.reverse(strings1);
-        // Collections.shuffle(strings1);
-        showList("strings1 after", strings1);
+        showList("strings1 after reverse: ", strings1);
         System.out.println();
 
         List<Vehicle> vehicles = createList(productUser.getVehicles().get(0),
                 productUser.getVehicles().get(1), productUser.getVehicles().get(2), productUser.getVehicles().get(3), productUser.getVehicles().get(4));
 
-        System.out.println("vehicles before sort: " + vehicles);
+        System.out.println("vehicles before sort  :        " + vehicles);
         Collections.sort(vehicles);
-//        Collections.reverse(vehicles);
-        System.out.println("vehicles after sort:  " + vehicles);
+        System.out.println("vehicles after sort   :        " + vehicles);
+        Collections.reverse(vehicles);
+        System.out.println("vehicles after reverse:        " + vehicles);
+
+        // VehicleSorter colourSorter = new VehicleSorter();
+        // Collections.sort(vehicles, new VehicleSorter());
+        vehicles.sort(new VehicleSorter());
+        System.out.println("vehicles after colour sort   :  " + vehicles);
     }
 
     public void showList(String text, List<String> strings) {

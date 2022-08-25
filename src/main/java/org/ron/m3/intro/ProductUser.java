@@ -85,8 +85,8 @@ public class ProductUser {
         products.add(new Product(1234, "widget", 9.99, LocalDate.of(2019, 3, 2)));
         products.add(new Product(1234, "widget", 9.99, LocalDate.of(2019, 2, 2)));
         products.add(new Product(1235, "thingy", 19.99));
-        products.add(new Product(1236, "stuff", 29.99));
-        products.add(new Product(1236, "stuff", 29.99));
+        products.add(new Product(1236, "stuff", 29.99, LocalDate.of(2017, 5, 8)));
+        products.add(new Product(1236, "stuff", 29.99, LocalDate.of(2018, 3, 3)));
 
         vehicles.add(new Vehicle("Tesla", "model 3", 4, "white"));
         vehicles.add(new Vehicle("Ford", "Fiesta", 4, "blue"));
