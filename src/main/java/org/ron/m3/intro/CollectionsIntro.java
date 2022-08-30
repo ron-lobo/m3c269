@@ -185,6 +185,31 @@ public class CollectionsIntro {
         linkedList.add("cruel");
         linkedList.add("world");
         useList("linkedList", linkedList);
+
+        List<String> stringList1 = new ArrayList<>();
+        populate(stringList1, "a", "b", "cde");
+        stringList1.add("ijk");
+
+        List<String> stringList2 = List.of("a", "b", "xyz");
+        // stringList2.add("ijk");
+
+        List<String> stringList3 = new ArrayList<>(List.of("a", "b", "xyz"));
+        stringList3.add("ijk");
+        useList("stringList3", stringList3);
+
+        List<String> stringList4 = Arrays.asList("1", "2", "3");
+        stringList4.set(0, "999");
+        stringList4.remove("abc");
+//        stringList4.add("abc");
+
+    }
+
+    public void populate(List<String> stringList, String... strings) {
+        stringList.addAll(Arrays.asList(strings));
+
+//        for (String s : strings) {
+//            stringList.add(s);
+//        }
     }
 
     private void useList(String text, List<String> list) {
