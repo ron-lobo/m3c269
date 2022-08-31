@@ -32,6 +32,7 @@ public class Java8LambdaExpressions {
 
 
     private class MyIntro2 implements Intro2 {
+
         public String introduce(String name, String job) {
             return print(INTRO_NAME, name, AND, INTRO_JOB, job);
         }
