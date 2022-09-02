@@ -1,5 +1,8 @@
 package org.ron.m3.spring.example3;
 
+import org.springframework.stereotype.Repository;
+
+@Repository
 public class HWDBImpl implements HWDB {
 
     private RandomisationService rs = new RandomisationService();

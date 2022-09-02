@@ -1,5 +1,9 @@
 package org.ron.m3.spring.example3;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+@Controller
 public class HWHelperImpl implements HWHelper {
 
     private DepA depA;
@@ -7,6 +11,16 @@ public class HWHelperImpl implements HWHelper {
 
     public HWHelperImpl(DepA depA, HWDB hwDB) {
         this.depA = depA;
+        this.hwDB = hwDB;
+    }
+
+    @Autowired
+    public HWHelperImpl(DepA depA) {
+        this.depA = depA;
+    }
+
+    @Autowired
+    public void setHwDB(HWDB hwDB) {
         this.hwDB = hwDB;
     }
 

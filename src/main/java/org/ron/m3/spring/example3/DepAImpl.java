@@ -1,5 +1,8 @@
 package org.ron.m3.spring.example3;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class DepAImpl implements DepA {
 
     private RandomisationService rs = new RandomisationService();
