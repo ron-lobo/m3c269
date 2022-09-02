@@ -9,7 +9,8 @@ public class Misc {
         System.out.println(customerR);
         int x = customerR.discountLevel();
 
-        CustomerL customerL = new CustomerL("Hogwartz", "HP", "hp@hogwartz", null, LocalDate.now(), 10, 10);
-
+        CustomerL customerL = new CustomerL("Hogwartz", "HP", "HG", "hp@hogwartz", null, LocalDate.now(), 10, 10);
+        customerL.setDiscountLevel(9);
+        System.out.println(customerL);
     }
 }
